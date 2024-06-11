@@ -1,0 +1,488 @@
+html, body {
+    height: 100%;
+    font-family:"Open Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    margin: 0;
+    padding: 0;
+    background: radial-gradient(circle, #e6f2ff 0%, #fff1f1 100%);
+    color: rgb(0, 0, 0);
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    color: rgb(60, 60, 60);
+    padding: 20px 0;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    position: relative;
+}
+
+.logo {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.hamburger {
+    display: none;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: rgb(60, 60, 60);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #4652ff;
+}
+
+#main1 {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    position: relative;
+}
+
+.intro {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.intro2 {
+    text-align: left;
+}
+
+.intro3 {
+    text-align: left;
+    margin-bottom: 50px;
+}
+
+.intro4 {
+    text-align: left;
+    margin-bottom: 50px;
+}
+
+.intro4 p {
+    opacity: 0;
+    transform: translateX(100px);
+    animation: fadeInRight 1s forwards;
+    font-size: 1.2em;
+}
+
+.intro .profile-pic {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+    opacity: 0;
+    transform: translateX(-100px);
+    animation: fadeInLeft 1s forwards;
+}
+
+.intro p {
+    opacity: 0;
+    transform: translateX(100px);
+    animation: fadeInRight 1s forwards;
+    font-size: 1.2em;
+}
+
+#p {
+    opacity: 0;
+    transform: translateX(100px);
+    animation: fadeInRight 1s forwards;
+    font-size: 1.2em;
+}
+
+#ul {
+    opacity: 0;
+    transform: translateX(-100px);
+    animation: fadeInLeft 1s forwards;
+    margin-bottom: 50px;
+}
+
+@keyframes fadeInLeft {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+footer {
+    text-align: center;
+    padding: 10px 0;
+    color: #fff;
+    flex-shrink: 0;
+    position: relative;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    background-image: 
+        linear-gradient(to right, rgba(255, 255, 255, 0.596) 0.5px, transparent 0.5px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.596) 0.5px, transparent 0.5px);
+    background-size: 100px 100px;
+}
+
+.bottom-left-link {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: rgb(60, 60, 60);
+    text-decoration: none;
+    padding: 5px 10px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.bottom-left-link:hover {
+    color: #4652ff;
+}
+
+.bottom-left-link .arrow {
+    display: inline-block;
+    margin-left: 5px;
+    transition: transform 0.3s;
+    animation: moveArrow 0.5s infinite alternate;
+    font-size: 24px; /* Increase the size of the arrow */
+}
+
+@keyframes moveArrow {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(10px);
+    }
+}
+
+.linkedin-icon i {
+    color: #ccc;
+    transition: color 0.3s;
+}
+
+.linkedin-icon:hover i {
+    color: #0077b5;
+}
+
+.github-icon i {
+    color: #ccc;
+    transition: color 0.3s;
+}
+
+.github-icon:hover i {
+    color: #3d3d3d;
+}
+
+.gmail-icon i {
+    color: #ccc;
+    transition: color 0.3s;
+}
+
+.gmail-icon:hover i {
+    color: #e82c2c;
+}
+
+.footer-icon {
+    display: inline-block;
+    margin: 0 10px;
+    transition: transform 0.3s ease;
+}
+
+.footer-icon img {
+    width: 30px;
+    height: auto;
+}
+
+.footer-icon:hover {
+    transform: translateY(-3px);
+}
+
+/* Mobile Styles */
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+
+    .nav-links {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        background-color: #fff;
+        position: fixed;
+        top: -100%; /* Initially hide the menu above the viewport */
+        left: 0;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        transition: top 0.5s ease; /* Transition for smooth animation */
+        z-index: 1;
+    }
+
+    .nav-links.active {
+        top: 60px; /* Position the menu below the hamburger icon */
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .logo {
+        margin-left: 20px;
+    }
+}
+
+
+#main2 {
+    flex-grow: 1;
+    display: flex;
+    justify-content: left;
+    align-items: left;
+    padding: 30px;
+    position: relative;
+}
+
+@media (min-width: 769px) {
+    #main2 {
+        margin-left: 70px;
+        margin-right: 70px;
+    }
+}
+/* Tambahkan gaya untuk timeline */
+.timeline {
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 20px;
+}
+
+.year {
+    position: absolute;
+    left: -45px;
+    top: 0;
+    font-weight: bold;
+}
+
+.details {
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.project-container {
+    display: flex; 
+    justify-content: space-between; 
+    flex-wrap: wrap; 
+    margin-top: 20px;
+    transform: translateX(100px);
+    animation: fadeInRight 1s forwards;
+}
+
+.project-card {
+    width: calc(50% - 10px); /* Perbarui lebar kartu proyek dan hapus margin */
+    margin-bottom: 20px; 
+    overflow: hidden;
+    position: relative;
+}
+
+.project-card img {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.3s ease;
+    object-fit: cover; /* Untuk memastikan gambar terpotong jika proporsi tidak sesuai */
+}
+
+.project-card:hover img {
+    transform: scale(1.1);
+}
+
+.project-title {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.272);
+    color: white;
+    padding: 10px;
+    margin: 0;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.project-card:hover .project-title {
+    opacity: 1;
+}
+
+.project-type {
+    background-color: #ccc;
+    color: #333;
+    padding: 5px 10px;
+    border-radius: 20px;
+    margin-right: 5px; /* Jarak antara label-label */
+    margin-bottom: 5px;
+    font-size: 0.8em;
+}
+
+/* Aturan media queries untuk layar dengan lebar maksimum 768px (perangkat seluler) */
+@media (max-width: 768px) {
+    .project-container {
+        display: block; /* Mengubah tata letak menjadi tumpukan vertikal */
+    }
+
+    .project-card {
+        width: 100%; /* Kartu proyek mengisi lebar layar penuh */
+        margin-bottom: 20px; /* Atur jarak antara kartu proyek di tumpukan vertikal */
+    }
+}
+
+.project-labels {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 5px; /* Jarak antara label-label dan judul proyek */
+}
+
+.project-labels2 {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 5px; /* Jarak antara label-label dan judul proyek */
+    transform: translateX(100px);
+    animation: fadeInRight 1s forwards;
+}
+.image-row {
+    display: flex; /* Mengatur tata letak menjadi flexbox */
+    margin-top: 20px; /* Sesuaikan jarak antara baris label dan gambar */
+    transform: translateX(-100px);
+    animation: fadeInLeft 1s forwards;
+}
+
+.image-row img {
+    width: 50%; /* Set lebar gambar agar dua gambar berada dalam satu baris */
+    margin-right: 5px; /* Sesuaikan jarak antara gambar */
+    object-fit: cover; /* Pastikan gambar terpotong jika proporsi tidak sesuai */
+}
+@media (max-width: 768px) {
+    .image-row {
+        flex-direction: column; /* Mengubah tata letak menjadi tumpukan vertikal */
+    }
+
+    .image-row img {
+        width: 100%; /* Mengisi lebar container */
+        margin-right: 0; /* Menghapus margin kanan */
+        margin-bottom: 10px; /* Menambahkan jarak antara gambar */
+    }
+}
+.github-link {
+    display: inline-block;
+    background-color: #333; /* Warna latar belakang */
+    color: #fff; /* Warna teks */
+    padding: 10px 20px; /* Ukuran padding */
+    border-radius: 5px; /* Menghasilkan sudut bulat */
+    text-decoration: none; /* Hilangkan dekorasi tautan */
+    transition: background-color 0.3s; /* Animasi saat dihover */
+    margin-top: 50px;
+}
+
+.github-link:hover {
+    background-color: #555; /* Warna latar belakang saat dihover */
+}
+
+.github-link a {
+    color: #fff; /* Warna teks dalam tautan */
+    text-decoration: none; /* Hilangkan dekorasi tautan */
+}
+
+.responsive-video {
+    width: 100%; /* Ensures the video scales to the full width of its container */
+    max-width: 600px; /* Sets a maximum width for the video */
+    height: auto; /* Maintains the aspect ratio */
+    display: block; /* Ensures the video is displayed as a block element */
+    margin: 0 auto; /* Centers the video horizontally */
+}
+
+.contact-form {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.contact-form label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+.contact-form textarea {
+    resize: vertical;
+}
+
+.contact-form input[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.contact-form input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+.footer-text {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    color: rgb(60, 60, 60); /* Match the main text color */
+    font-size: 0.8em; /* Smaller text size */
+}
