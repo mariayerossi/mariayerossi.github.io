@@ -1,6 +1,6 @@
 html, body {
     height: 100%;
-    font-family: "Open Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-family:"Open Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     margin: 0;
     padding: 0;
     background: radial-gradient(circle, #e6f2ff 0%, #fff1f1 100%);
@@ -71,11 +71,7 @@ nav ul li a:hover {
 }
 
 .intro2 {
-    text-align: center; /* Center the text */
-}
-
-.intro2 h1 {
-    margin-bottom: 30px; /* Add some space below the "Contact" heading */
+    text-align: left;
 }
 
 .intro3 {
@@ -237,6 +233,7 @@ body::before {
 }
 
 /* Mobile Styles */
+/* Mobile Styles */
 @media (max-width: 768px) {
     .hamburger {
         display: block;
@@ -269,14 +266,169 @@ body::before {
     }
 }
 
+
 #main2 {
     flex-grow: 1;
     display: flex;
-    flex-direction: column; /* Change to column layout */
-    align-items: center; /* Center align items horizontally */
-    justify-content: center; /* Center align items vertically */
+    justify-content: left;
+    align-items: left;
     padding: 30px;
     position: relative;
+}
+
+@media (min-width: 769px) {
+    #main2 {
+        margin-left: 70px;
+        margin-right: 70px;
+    }
+}
+/* Tambahkan gaya untuk timeline */
+.timeline {
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 20px;
+}
+
+.year {
+    position: absolute;
+    left: -45px;
+    top: 0;
+    font-weight: bold;
+}
+
+.details {
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.project-container {
+    display: flex; 
+    justify-content: space-between; 
+    flex-wrap: wrap; 
+    margin-top: 20px;
+    transform: translateX(100px);
+    animation: fadeInRight 1s forwards;
+}
+
+.project-card {
+    width: calc(50% - 10px); /* Perbarui lebar kartu proyek dan hapus margin */
+    margin-bottom: 20px; 
+    overflow: hidden;
+    position: relative;
+}
+
+.project-card img {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.3s ease;
+    object-fit: cover; /* Untuk memastikan gambar terpotong jika proporsi tidak sesuai */
+}
+
+.project-card:hover img {
+    transform: scale(1.1);
+}
+
+.project-title {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.272);
+    color: white;
+    padding: 10px;
+    margin: 0;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.project-card:hover .project-title {
+    opacity: 1;
+}
+
+.project-type {
+    background-color: #ccc;
+    color: #333;
+    padding: 5px 10px;
+    border-radius: 20px;
+    margin-right: 5px; /* Jarak antara label-label */
+    margin-bottom: 5px;
+    font-size: 0.8em;
+}
+
+/* Aturan media queries untuk layar dengan lebar maksimum 768px (perangkat seluler) */
+@media (max-width: 768px) {
+    .project-container {
+        display: block; /* Mengubah tata letak menjadi tumpukan vertikal */
+    }
+
+    .project-card {
+        width: 100%; /* Kartu proyek mengisi lebar layar penuh */
+        margin-bottom: 20px; /* Atur jarak antara kartu proyek di tumpukan vertikal */
+    }
+}
+
+.project-labels {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 5px; /* Jarak antara label-label dan judul proyek */
+}
+
+.project-labels2 {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 5px; /* Jarak antara label-label dan judul proyek */
+    transform: translateX(100px);
+    animation: fadeInRight 1s forwards;
+}
+.image-row {
+    display: flex; /* Mengatur tata letak menjadi flexbox */
+    margin-top: 20px; /* Sesuaikan jarak antara baris label dan gambar */
+    transform: translateX(-100px);
+    animation: fadeInLeft 1s forwards;
+}
+
+.image-row img {
+    width: 50%; /* Set lebar gambar agar dua gambar berada dalam satu baris */
+    margin-right: 5px; /* Sesuaikan jarak antara gambar */
+    object-fit: cover; /* Pastikan gambar terpotong jika proporsi tidak sesuai */
+}
+@media (max-width: 768px) {
+    .image-row {
+        flex-direction: column; /* Mengubah tata letak menjadi tumpukan vertikal */
+    }
+
+    .image-row img {
+        width: 100%; /* Mengisi lebar container */
+        margin-right: 0; /* Menghapus margin kanan */
+        margin-bottom: 10px; /* Menambahkan jarak antara gambar */
+    }
+}
+.github-link {
+    display: inline-block;
+    background-color: #333; /* Warna latar belakang */
+    color: #fff; /* Warna teks */
+    padding: 10px 20px; /* Ukuran padding */
+    border-radius: 5px; /* Menghasilkan sudut bulat */
+    text-decoration: none; /* Hilangkan dekorasi tautan */
+    transition: background-color 0.3s; /* Animasi saat dihover */
+    margin-top: 50px;
+}
+
+.github-link:hover {
+    background-color: #555; /* Warna latar belakang saat dihover */
+}
+
+.github-link a {
+    color: #fff; /* Warna teks dalam tautan */
+    text-decoration: none; /* Hilangkan dekorasi tautan */
+}
+
+.responsive-video {
+    width: 100%; /* Ensures the video scales to the full width of its container */
+    max-width: 600px; /* Sets a maximum width for the video */
+    height: auto; /* Maintains the aspect ratio */
+    display: block; /* Ensures the video is displayed as a block element */
+    margin: 0 auto; /* Centers the video horizontally */
 }
 
 .contact-form {
@@ -285,6 +437,10 @@ body::before {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .contact-form label {
@@ -298,7 +454,7 @@ body::before {
 .contact-form textarea {
     width: 100%;
     padding: 10px;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
     box-sizing: border-box;
