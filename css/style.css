@@ -567,8 +567,8 @@ body::before {
 
 @media (max-width: 768px) {
     #sidebar {
-        width: 80%; /* Adjust sidebar width for better visibility on mobile */
-        right: -80%; /* Hide sidebar initially on mobile */
+        width: 100%; /* Adjust sidebar width for better visibility on mobile */
+        right: -100%; /* Hide sidebar initially on mobile */
         box-shadow: none; /* Remove box shadow on mobile */
     }
 
