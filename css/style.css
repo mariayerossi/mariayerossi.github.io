@@ -1,6 +1,6 @@
 html, body {
     height: 100%;
-    font-family:"Open Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-family:"Poppins", "Poppins-fallback", "Helvetica", "Apple Color Emoji", "Segoe UI Emoji", "NotoColorEmoji", "Noto Color Emoji", "Segoe UI Symbol", "Android Emoji", "EmojiSymbols", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "Helvetica Neue", "Noto Sans", sans-serif;
     margin: 0;
     padding: 0;
     background: radial-gradient(circle, #e6f2ff 0%, #fff1f1 100%);
@@ -491,4 +491,36 @@ body::before {
     justify-content: center; /* Center align items vertically */
     padding: 30px;
     position: relative;
+}
+
+.skills-images {
+    display: flex;
+    justify-content: space-between; /* Adjust spacing between images */
+    margin-top: 20px; /* Adjust the margin as needed */
+    transform: translateX(100px);
+    animation: fadeInRight 1s forwards;
+}
+
+.skill-item {
+    text-align: center; /* Center the captions below the images */
+    width: 30%; /* Each skill item takes up 30% of the container's width */
+}
+
+.skill-item img {
+    width: 100%; /* Ensure the image fills the container */
+    margin-bottom: 10px; /* Space between the image and the caption */
+    object-fit: cover; /* Ensure images are properly cropped */
+}
+
+/* For smaller screens, ensure images stack vertically */
+@media (max-width: 768px) {
+    .skills-images {
+        flex-direction: column;
+        align-items: center; /* Center align the images */
+    }
+
+    .skill-item {
+        width: 80%; /* Reduce the width for better visibility on small screens */
+        margin-bottom: 20px; /* Add margin between skill items */
+    }
 }
