@@ -504,6 +504,7 @@ body::before {
 .skill-item {
     text-align: center; /* Center the captions below the images */
     width: 30%; /* Each skill item takes up 30% of the container's width */
+    cursor: pointer;
 }
 
 .skill-item img {
@@ -523,4 +524,43 @@ body::before {
         width: 80%; /* Reduce the width for better visibility on small screens */
         margin-bottom: 20px; /* Add margin between skill items */
     }
+}
+
+
+/* Sidebar styles */
+#sidebar {
+    position: fixed;
+    right: -400px; /* Hidden initially */
+    top: 0;
+    width: 400px;
+    height: 100%;
+    background: #fff;
+    box-shadow: -2px 0 5px rgba(0,0,0,0.5);
+    transition: right 0.3s;
+    z-index: 2;
+    overflow-y: auto;
+}
+
+#sidebar.active {
+    right: 0;
+}
+
+#sidebar button#closeSidebar {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 1.5em;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.sidebar-content {
+    padding: 40px;
+    margin-top: 50px;
+}
+
+.sidebar-content img {
+    width: 100%;
+    margin-bottom: 10px;
 }
