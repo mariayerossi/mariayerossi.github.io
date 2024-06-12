@@ -20,7 +20,7 @@ $(document).ready(function() {
         
         // Change sidebar content based on the clicked skill
         if (skillID === 'skill1') {
-            $('.sidebar-content').html('<h2>Business Skills</h2><ul><li>Project Management</li><li>Owner of Zhongwen Course</li><li>Social Media Marketing</li></ul>');
+            $('.sidebar-content').html('<h2>Business Skills</h2><ul><li>Project Management</li><li>Owner of Zhongwen Course</li><li>Social Media Marketing</li><li>Basic Accounting</li><li>Financial Management</li><li></li>E-Marketing</ul>');
         } else if (skillID === 'skill2') {
             $('.sidebar-content').html('<h2>Programming Skills</h2><ul><li>Python</li><li>Javascript</li><li>PHP</li><li>Laravel</li><li>Java</li><li>Database</li><li>HTML</li><li>CSS</li><li>Tailwind CSS</li><li>Bootstrap</li><li>Kotlin</li><li>C#</li><li>jQuery</li><li>SQL</li><li>Github</li><li>MVC Pattern</li><li>Activity Diagram</li><li>Use Case</li><li>CDM</li><li>PDM</li></ul>');
         } else if (skillID === 'skill3') {
