@@ -462,7 +462,7 @@ body::before {
 }
 
 .contact-form input[type="submit"] {
-    background-color: #007bff;
+    background-color: #8e8e8e;
     color: #fff;
     border: none;
     padding: 10px 20px;
@@ -472,7 +472,7 @@ body::before {
 }
 
 .contact-form input[type="submit"]:hover {
-    background-color: #0056b3;
+    background-color: #5a5a5a;
 }
 
 .footer-text {
@@ -574,5 +574,70 @@ body::before {
 
     #sidebar.active {
         right: 0;
+    }
+}
+.project-filters {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Style untuk tombol filter */
+.filter-btn {
+    cursor: pointer;
+    display: inline-block;
+    color: rgb(60, 60, 60);
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    background-color: #ffffff00; /* Warna latar belakang putih */
+    /* border: 2px solid #cccccc; */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Efek bayangan lembut */
+    transition: all 0.3s ease;
+}
+
+.filter-btn:hover {
+    background-color: #f2f2f2; /* Latar belakang sedikit lebih gelap saat dihover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Bayangan sedikit lebih kuat saat dihover */
+    transform: translateY(-3px); /* Mengangkat tombol sedikit saat dihover */
+}
+
+.filter-btn.active {
+    background-color: #8e8e8e; /* Warna latar hijau untuk tombol yang aktif */
+    color: #ffffff; /* Warna teks putih untuk kontras yang lebih baik */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Efek bayangan yang sama untuk tombol aktif */
+    transform: translateY(-3px); /* Mengembalikan transformasi saat tombol aktif */
+    /* font-size: 1.0em; */
+}
+
+
+/* Style untuk container tombol filter */
+.filter-btn-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+
+.project-card {
+    width: calc(50% - 10px);
+    margin-bottom: 20px;
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.3s ease;
+    transform: translateX(100px);
+    animation: fadeInRight 1s forwards;
+}
+
+.project-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+/* Adjust card width for smaller screens */
+@media (max-width: 768px) {
+    .project-card {
+        width: 100%;
     }
 }

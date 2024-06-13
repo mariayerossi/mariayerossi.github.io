@@ -52,4 +52,24 @@ $(document).ready(function() {
             $('#sidebar').removeClass('active');
         }
     });
+
+    $('.project-card').show();
+
+    // Fungsi untuk menampilkan proyek berdasarkan kategori yang dipilih
+    $('.filter-btn').click(function() {
+        var filterValue = $(this).attr('data-filter');
+
+        // Menampilkan proyek yang memiliki tag sesuai dengan filterValue
+        $('.project-card').each(function() {
+            if ($(this).attr('data-tags').includes(filterValue) || filterValue == 'all') {
+                $(this).fadeIn(1000);
+            } else {
+                $(this).hide();
+            }
+        });
+
+        // Menandai tombol filter yang aktif
+        $('.filter-btn').removeClass('active');
+        $(this).addClass('active');
+    });
 });
