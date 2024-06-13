@@ -532,9 +532,9 @@ body::before {
 /* Sidebar styles */
 #sidebar {
     position: fixed;
-    right: -500px; /* Hidden initially */
+    right: -400px; /* Hidden initially */
     top: 0;
-    width: 500px;
+    width: 400px;
     height: 100%;
     background: #fff;
     box-shadow: -2px 0 5px rgba(0,0,0,0.5);
